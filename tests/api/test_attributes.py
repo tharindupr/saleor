@@ -236,7 +236,7 @@ def test_resolve_attribute_values(user_api_client, product, staff_user):
         variant.attributes.first().values.values_list("slug", flat=True)
     )
 
-    assert len(product_attribute_values) == 1
+    assert len(product_attribute_values) == 2
     assert len(variant_attribute_values) == 1
 
     product = get_graphql_content(api_client.post_graphql(query))["data"]["products"][
